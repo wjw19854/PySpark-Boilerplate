@@ -69,3 +69,5 @@ target/
 # PyCharm and VirtualEnv
 .idea
 .venv
+.DS_Store
+.vscode/

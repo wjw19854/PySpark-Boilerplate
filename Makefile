@@ -48,3 +48,19 @@ build: clean
 	cp ./src/main.py ./dist
 	cd ./src && zip -x main.py -x \*libs\* -r ../dist/jobs.zip .
 	cd ./src/libs && zip -r ../../dist/libs.zip .
+# run:
+# curl --request POST \
+# --url http://ip-172-24-21-212.cn-northwest-1.compute.internal:8998/batches \
+# --header 'content-type: application/json' \
+# --data '{
+# "file": "s3://bi-data-store/code/spark-test/v0.1/main.py",
+# "pyFiles": [
+# "s3://bi-data-store/code/spark-test/v0.1/jobs.zip",
+# "s3://bi-data-store/code/spark-test/v0.1/libs.zip"
+# ],
+# "args": [
+# 		"--job", "wordcount"
+# 	]
+# }'
+
+# curl -X GET -i 'http://ip-172-24-21-212.cn-northwest-1.compute.internal:8998/batches/2'
